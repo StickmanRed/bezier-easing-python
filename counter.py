@@ -68,7 +68,8 @@ def bezier(mX1, mY1, mX2, mY2):
     
     sampleValues = []
     for i in range(kSplineTableSize):
-        sampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2)
+        # "IndexError: list assignment index out of range". Bleugh.
+        sampleValues.append(calcBezier(i * kSampleStepSize, mX1, mX2))
     
     def getTForX(aX):
         intervalStart = 0.0
