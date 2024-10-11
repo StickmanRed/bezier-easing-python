@@ -60,7 +60,7 @@ def linear(x):
     return x # Straightforward, isn't it?
 
 def bezier(mX1, mY1, mX2, mY2):
-    if not ((0 < mX1 < 1) and (0 < mX2 < 1)):
+    if not ((0 <= mX1 <= 1) and (0 <= mX2 <= 1)):
         raise ValueError('Wrong number.')
     
     if (mX1 == mY1) and (mX2 == mY2):
