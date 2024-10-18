@@ -35,7 +35,7 @@ def binarySubdivide(aX, aA, aB, mX1, mX2):
     i = 0
 
     # Patch for JavaScript do-while
-    condition = (Math.abs(currentX) > SUBDIVISION_PRECISION and ++i < SUBDIVISION_MAX_ITERATIONS)
+    condition = (abs(currentX) > SUBDIVISION_PRECISION and ++i < SUBDIVISION_MAX_ITERATIONS)
     while condition:
         currentT = aA + (aB - aA) / 2.0
         currentX = calcBezier(currentT, mX1, mX2) - aX
@@ -44,7 +44,7 @@ def binarySubdivide(aX, aA, aB, mX1, mX2):
         else:
             aA = currentT
 
-        condition = (Math.abs(currentX) > SUBDIVISION_PRECISION and ++i < SUBDIVISION_MAX_ITERATIONS)
+        condition = (abs(currentX) > SUBDIVISION_PRECISION and ++i < SUBDIVISION_MAX_ITERATIONS)
     return currentT
 
 def newtonRaphsonIterate(aX, aGuessT, mX1, mX2):
