@@ -35,7 +35,7 @@ def binarySubdivide(aX, aA, aB, mX1, mX2):
     i = 0
 
     # Patch for JavaScript do-while
-    condition = (abs(currentX) > SUBDIVISION_PRECISION and ++i < SUBDIVISION_MAX_ITERATIONS)
+    condition = True
     while condition:
         currentT = aA + (aB - aA) / 2.0
         currentX = calcBezier(currentT, mX1, mX2) - aX
